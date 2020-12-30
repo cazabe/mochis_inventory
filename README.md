@@ -1,0 +1,1 @@
+# mochis_inventory
