@@ -6,32 +6,32 @@ include "../templates/nav.php"
 
 <h1>Crear Egreso</h1>
 
-<form>
+<form method="POST" action="../controller/egresoC.php">
   <div class="form-group row mt-5">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre del egreso:</label>
     <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Ingresa nombre del cliente">
+      <input type="text" name="nombreE" class="form-control" id="inputEmail3" placeholder="Ingresa nombre del cliente">
     </div>
   </div>
 
   <div class="form-group row mt-5">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Cantidad:</label>
     <div class="col-sm-10">
-      <input type="number" class="form-control" id="cantidad" placeholder="Ingrese lo que se cobro de envio">
+      <input type="number" name="cantidad" class="form-control" id="cantidad" step=".01" placeholder="Ingrese lo que se cobro de envio">
     </div>
   </div>
 
   <div class="form-group row mt-5">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Costo:</label>
     <div class="col-sm-10">
-      <input type="number" class="form-control" id="costo" placeholder="costo del producto o servicio">
+      <input type="number" name="costo" class="form-control" id="costo" step=".01" placeholder="costo del producto o servicio">
     </div>
   </div>
 
   <div class="form-group row mt-5">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Total Egreso:</label>
     <div class="col-sm-10">
-      <input type="number" class="form-control" id="total" placeholder="Total egreso" disabled>
+      <input type="number" name="totalE" class="form-control" id="total" step=".01" placeholder="Total egreso">
     </div>
   </div>
 

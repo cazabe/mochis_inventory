@@ -16,7 +16,7 @@
 <body>   
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand">
-                <img src="" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                <img src="/mochis_iventory/img/mochis-removebg-preview.png" width="50" height="45" class="d-inline-block align-top" alt="" loading="lazy">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
