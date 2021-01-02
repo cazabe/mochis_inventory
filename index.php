@@ -11,7 +11,7 @@ include './templates/nav.php'
                     <h5 class="card-title text-center"><i class="fa fa-user"></i> INGRESOS</h5>
                 </div>
                 <div class="card-footer text-center">
-                    <a href="./formulario.php" class="card-link">VER TABLA</a> | <a href="./views/ingresoForm.php">CREAR INGRESO</a>
+                    <a href="./views/ingresoTable.php" class="card-link">VER TABLA</a> | <a href="./views/ingresoForm.php">CREAR INGRESO</a>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@ include './templates/nav.php'
                     <h5 class="card-title text-center"><i  class="fa fa-user"></i> EGRESOS </h5>
                 </div>
                 <div class="card-footer text-center">
-                    <a href="#" class="card-link">VER TABLA</a> | <a href="./views/egresoForm.php">CREAR EGRESO</a>
+                    <a href="./views/egresoTable.php" class="card-link">VER TABLA</a> | <a href="./views/egresoForm.php">CREAR EGRESO</a>
                 </div>
             </div>
         </div>
