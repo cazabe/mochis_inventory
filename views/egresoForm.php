@@ -14,6 +14,17 @@ include "../templates/nav.php"
     </div>
   </div>
 
+  <div class="form-group row">
+    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Banco:</label>
+    <div class="col-sm-10">
+    <select class="form-control" id="banco" name="banco">
+      <option>Escoja...</option>
+      <option value="pichincha">Pichincha</option>
+      <option value="produbanco">Produbanco</option>
+    </select>
+    </div>
+  </div>
+
   <div class="form-group row mt-5">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Cantidad:</label>
     <div class="col-sm-10">

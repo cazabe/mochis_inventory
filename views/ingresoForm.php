@@ -7,10 +7,22 @@ include "../templates/nav.php"
 <h1>Crear Ingreso</h1>
 
 <form method="POST" action="../controller/ingresoC.php">
+
   <div class="form-group row mt-5">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre cliente:</label>
     <div class="col-sm-10">
       <input type="text" name="cliente" class="form-control" id="inputEmail3" placeholder="Ingresa nombre del cliente">
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Banco</label>
+    <div class="col-sm-10">
+    <select class="form-control" id="banco" name="banco">
+      <option>Escoja...</option>
+      <option value="pichincha">Pichincha</option>
+      <option value="produbanco">Produbanco</option>
+    </select>
     </div>
   </div>
   
@@ -40,12 +52,22 @@ include "../templates/nav.php"
     </div>
   </fieldset>
 
+  <!-- guardar cantidad en base de datos -->
+  <div class="form-group row mt-5">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Cantidad:</label> 
+    <div class="col-sm-10">
+      <input type="number" name="cantidad" class="form-control" id="cantidad" step=".01" placeholder="Ingrese lo que se cobro de envio">
+    </div>
+  </div>
+
   <div class="form-group row mt-5">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Cobro envio:</label>
     <div class="col-sm-10">
       <input type="number" name="envio" class="form-control" id="envio" step=".01" placeholder="Ingrese lo que se cobro de envio">
     </div>
   </div>
+
+
 
   <div class="form-group row mt-5">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Cobro cliente:</label>
@@ -77,12 +99,14 @@ include "../templates/footer.php"
 
 <script>
 
+/*agreagar caja de uno*/
+
 $( "#caja3" ).click(function() {
-  $("#cobroCliente").val(6);
+  $("#cobroCliente").val(4);
 });
 
 $( "#caja6" ).click(function() {
-  $("#cobroCliente").val(9);
+  $("#cobroCliente").val(8);
 });
 
 $( "#caja9" ).click(function() {
@@ -92,7 +116,8 @@ $( "#caja9" ).click(function() {
 $( "#envio" ).keyup(function() {
   let cobroC = parseInt($("#cobroCliente").val());
   let envio = parseFloat($("#envio").val());
-  const total = envio + cobroC; 
+  let cant = parseFloat($("#cantidad").val());
+  const total = (cobroC * cant) + envio; 
   $("#totalI").val(total);
   console.log(typeof total);
 });

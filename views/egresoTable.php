@@ -30,9 +30,11 @@ $res = $query->fetchAll();
                     <tr>
                         <th>#</th>
                         <th>Nombre egreso</th>
+                        <th>Banco</th>
                         <th>Cantidad producto/servicio</th>
                         <th>costo</th>
                         <th>Total egreso</th>
+                        <th>Fecha</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,9 +45,11 @@ $res = $query->fetchAll();
                         <tr>
                             <td><?php echo $egreso['idEgreso'] ?></td>
                             <td><?php echo $egreso['nombreEgreso'] ?></td>
+                            <td><?php echo $egreso['banco'] ?></td>
                             <td><?php echo $egreso['cantidad'] ?></td>
                             <td><?php echo $egreso['costo'] ?></td>
                             <td><?php echo $egreso['totalEgreso'] ?></td>
+                            <td><?php echo $egreso['fecha'] ?></td>
                         </tr>
                     <?php
                     }
