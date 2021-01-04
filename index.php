@@ -1,5 +1,15 @@
 <?php
-include './templates/nav.php'
+include './templates/nav.php';
+include './model/bd.php';
+$sql = "SELECT i.totalIngreso, e.totalEgreso FROM ingresos i, egresos e";
+$query = $conn->prepare($sql);
+$query->execute();
+$res = $query->fetchAll();
+
+$total = 0;
+foreach ($res as $ingreso) { 
+    $total =  $ingreso['totalIngreso'] - $ingreso['totalEgreso']; 
+} 
 ?>
 
 <div class="container">
@@ -31,7 +41,8 @@ include './templates/nav.php'
                     <h5 class="card-title text-center"><i class="fa fa-user"></i> TOTAL CONSOLIDADO</h5>
                 </div>
                 <div class="card-footer text-center">
-                    <a href="#" class="card-link">VER VER TABLA</a>
+                    <!-- <a href="#" class="card-link">VER VER TABLA</a> -->
+                    <strong><p>TOTAL: <?php echo $total ?></p></strong>
                 </div>
             </div>
         </div>

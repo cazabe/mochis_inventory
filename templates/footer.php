@@ -1,5 +1,6 @@
-    <div className="footer">
-        <p>Mochis</p>
+    
+    <div class="footer">
+        <p>&copy Propiedad de Mochisec</p>
     </div>
 
 

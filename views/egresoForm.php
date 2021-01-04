@@ -4,7 +4,8 @@ include "../templates/nav.php"
 
 <div class="container"> 
 
-<h1>Crear Egreso</h1>
+
+<h1 class="mt-4">Crear Egreso</h1>
 
 <form method="POST" action="../controller/egresoC.php">
   <div class="form-group row mt-5">
@@ -49,7 +50,7 @@ include "../templates/nav.php"
   
 
   <div class="form-group row mt-5">
-    <div class="col-sm-10">
+    <div class="col-sm-10 marginb">
       <button type="submit" class="btn btn-primary">Guardar egreso</button>
     </div>
   </div>

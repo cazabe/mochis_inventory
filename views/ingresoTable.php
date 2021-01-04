@@ -60,8 +60,12 @@ $res = $query->fetchAll();
             </table>
         </div>
     </div>
-    <div class="d-flex bg-secondary">
+    <div class="d-flex bg-secondary marginb">
     <div class="p-2 mr-auto text-white"><strong><p>Total:</p></strong></div>
     <div class="p-2 mr-5 text-white"><strong><p><?php echo $suma ?></p></strong></div>
     </div>
 </div>
+
+<?php 
+include "../templates/footer.php"
+?>

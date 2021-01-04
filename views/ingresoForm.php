@@ -4,8 +4,9 @@ include "../templates/nav.php"
 
 <div class="container"> 
 
+<div class="mt-4">
 <h1>Crear Ingreso</h1>
-
+</div>
 <form method="POST" action="../controller/ingresoC.php">
 
   <div class="form-group row mt-5">
@@ -85,8 +86,8 @@ include "../templates/nav.php"
 
   
 
-  <div class="form-group row mt-5">
-    <div class="col-sm-10">
+  <div class="form-group row marginb">
+    <div class="col-sm-10 marginb">
       <button type="submit" class="btn btn-primary">Guardar ingreso</button>
     </div>
   </div>

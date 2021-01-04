@@ -1,5 +1,6 @@
 <?php   
 include '../model/bd.php';
+date_default_timezone_set("UTC");
 
 $cliente = $_POST["cliente"];
 $caja = $_POST["caja"];
