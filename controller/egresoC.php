@@ -6,9 +6,8 @@ $cantidad = $_POST["cantidad"];
 $costo = $_POST["costo"];
 $totalE = $_POST["totalE"]; 
 $banco = $_POST["banco"];
-$now = date_create()->format('Y-m-d H:i:s');
 
-$sql = "INSERT INTO egresos(nombreEgreso,banco,cantidad,costo,totalEgreso,fecha) VALUES('$nombreE','$banco','$cantidad','$costo','$totalE','$now')";
+$sql = "INSERT INTO egresos(nombreEgreso,banco,cantidad,costo,totalEgreso) VALUES('$nombreE','$banco','$cantidad','$costo','$totalE')";
 $query = $conn->prepare($sql);
 $query->execute();
 

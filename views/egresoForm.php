@@ -15,7 +15,7 @@ include "../templates/nav.php"
     </div>
   </div>
 
-  <div class="form-group row">
+  <div class="form-group row mt-4">
     <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Banco:</label>
     <div class="col-sm-10">
     <select class="form-control" id="banco" name="banco">
@@ -26,21 +26,21 @@ include "../templates/nav.php"
     </div>
   </div>
 
-  <div class="form-group row mt-5">
+  <div class="form-group row mt-4">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Cantidad:</label>
     <div class="col-sm-10">
       <input type="number" name="cantidad" class="form-control" id="cantidad" step=".01" placeholder="Ingrese lo que se cobro de envio">
     </div>
   </div>
 
-  <div class="form-group row mt-5">
+  <div class="form-group row mt-4">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Costo:</label>
     <div class="col-sm-10">
       <input type="number" name="costo" class="form-control" id="costo" step=".01" placeholder="costo del producto o servicio">
     </div>
   </div>
 
-  <div class="form-group row mt-5">
+  <div class="form-group row mt-4">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Total Egreso:</label>
     <div class="col-sm-10">
       <input type="number" name="totalE" class="form-control" id="total" step=".01" placeholder="Total egreso">

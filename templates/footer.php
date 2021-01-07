@@ -1,6 +1,6 @@
     
     <div class="footer">
-        <p>&copy Propiedad de Mochisec</p>
+        <p>&copy Propiedad de Mochis-ec</p>
     </div>
 
 

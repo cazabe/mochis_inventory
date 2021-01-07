@@ -28,12 +28,15 @@ $res = $query->fetchAll();
                     <tr>
                         <th>#</th>
                         <th>Cliente</th>
+                        <th>Sector</th>
                         <th>Banco</th>
                         <th>Caja de mochi</th>
                         <th>Cantidad</th>
                         <th>Costo envio</th>
                         <th>Venta</th>
                         <th>Total ingreso</th>
+                        <th>Comentario</th>
+                        <th>Hora entrega</th>
                         <th>Fecha</th>
                     </tr>
                 </thead>
@@ -45,12 +48,15 @@ $res = $query->fetchAll();
                         <tr>
                             <td><?php echo $ingreso['idIngreso'] ?></td>
                             <td><?php echo $ingreso['nombreIngreso'] ?></td>
+                            <td><?php echo $ingreso['sector'] ?></td>
                             <td><?php echo $ingreso['banco'] ?></td>
                             <td><?php echo $ingreso['cajaMochi'] ?></td>
                             <td><?php echo $ingreso['cantidad'] ?></td>
                             <td><?php echo $ingreso['envio'] ?></td>
                             <td><?php echo $ingreso['venta'] ?></td>
                             <td><?php echo $ingreso['totalIngreso'] ?></td>
+                            <td><?php echo $ingreso['comentario'] ?></td>
+                            <td><?php echo $ingreso['hora_entrega'] ?></td>
                             <td><?php echo $ingreso['fecha'] ?></td>
                         </tr>
                     <?php

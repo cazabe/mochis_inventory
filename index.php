@@ -1,15 +1,30 @@
 <?php
 include './templates/nav.php';
 include './model/bd.php';
-$sql = "SELECT i.totalIngreso, e.totalEgreso FROM ingresos i, egresos e";
+
+$sql = "SELECT i.totalIngreso FROM ingresos i";
 $query = $conn->prepare($sql);
 $query->execute();
 $res = $query->fetchAll();
 
-$total = 0;
+$sqle = "SELECT e.totalEgreso FROM egresos e";
+$querye = $conn->prepare($sqle);
+$querye->execute();
+$resegre = $querye->fetchAll();
+
+$totalI = 0;
+$totale = 0;
+$totalC = 0;
 foreach ($res as $ingreso) { 
-    $total =  $ingreso['totalIngreso'] - $ingreso['totalEgreso']; 
+    $totalI +=  $ingreso['totalIngreso']; 
 } 
+
+foreach ($resegre as $egreso) { 
+    $totale +=  $egreso['totalEgreso']; 
+} 
+
+$totalC = $totalI - $totale;
+
 ?>
 
 <div class="container">
@@ -42,7 +57,7 @@ foreach ($res as $ingreso) {
                 </div>
                 <div class="card-footer text-center">
                     <!-- <a href="#" class="card-link">VER VER TABLA</a> -->
-                    <strong><p>TOTAL: <?php echo $total ?></p></strong>
+                    <strong><p>TOTAL: <?php echo $totalC ?></p></strong>
                 </div>
             </div>
         </div>

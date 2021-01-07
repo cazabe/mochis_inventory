@@ -15,8 +15,15 @@ include "../templates/nav.php"
       <input type="text" name="cliente" class="form-control" id="inputEmail3" placeholder="Ingresa nombre del cliente">
     </div>
   </div>
+
+  <div class="form-group row mt-4">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Sector:</label>
+    <div class="col-sm-10">
+      <input type="text" name="sector" class="form-control" id="inputEmail3" placeholder="Ingresa el sector de la entrega">
+    </div>
+  </div>
   
-  <div class="form-group row">
+  <div class="form-group row mt-4">
     <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Banco</label>
     <div class="col-sm-10">
     <select class="form-control" id="banco" name="banco">
@@ -27,7 +34,7 @@ include "../templates/nav.php"
     </div>
   </div>
   
-  <fieldset class="form-group mt-5">
+  <fieldset class="form-group mt-4">
     <div class="row">
       <legend class="col-form-label col-sm-2 pt-0">Seleccione la caja comprada:</legend>
       <div class="col-sm-10">
@@ -54,14 +61,14 @@ include "../templates/nav.php"
   </fieldset>
 
   <!-- guardar cantidad en base de datos -->
-  <div class="form-group row mt-5">
+  <div class="form-group row mt-4">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Cantidad:</label> 
     <div class="col-sm-10">
       <input type="number" name="cantidad" class="form-control" id="cantidad" step=".01" placeholder="Ingrese lo que se cobro de envio">
     </div>
   </div>
 
-  <div class="form-group row mt-5">
+  <div class="form-group row mt-4">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Cobro envio:</label>
     <div class="col-sm-10">
       <input type="number" name="envio" class="form-control" id="envio" step=".01" placeholder="Ingrese lo que se cobro de envio">
@@ -70,17 +77,31 @@ include "../templates/nav.php"
 
 
 
-  <div class="form-group row mt-5">
+  <div class="form-group row mt-4">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Cobro cliente:</label>
     <div class="col-sm-10">
       <input type="number" name="cobroC" class="form-control" id="cobroCliente"  step=".01" placeholder="cobro al cliente">
     </div>
   </div>
 
-  <div class="form-group row mt-5">
+  <div class="form-group row mt-4">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Total:</label>
     <div class="col-sm-10">
       <input type="number" name="totalIn" class="form-control" id="totalI"  step=".01" placeholder="Total ingreso">
+    </div>
+  </div>
+
+  <div class="form-group row mt-4">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Comentario extra:</label>
+    <div class="col-sm-10">
+      <input type="text" name="comentario" class="form-control" id="comentario" placeholder="Escriba un comentario de ser necesario">
+    </div>
+  </div>
+
+  <div class="form-group row mt-4">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Hora de entrega:</label>
+    <div class="col-sm-2">
+      <input type="time" name="timeE" class="form-control" id="timeE">
     </div>
   </div>
 
