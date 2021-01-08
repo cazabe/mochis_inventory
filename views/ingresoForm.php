@@ -140,8 +140,7 @@ $( "#envio" ).keyup(function() {
   let envio = parseFloat($("#envio").val());
   let cant = parseFloat($("#cantidad").val());
   const total = (cobroC * cant) + envio; 
-  $("#totalI").val(total);
-  console.log(typeof total);
+  $("#totalI").val(total.toFixed(2));
 });
 
 </script>

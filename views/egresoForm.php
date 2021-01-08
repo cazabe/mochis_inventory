@@ -71,7 +71,7 @@ $( "#costo" ).keyup(function() {
   let cant = $("#cantidad").val();
   let cost = $("#costo").val();
   const total = cant * cost; 
-  $("#total").val(total);
+  $("#total").val(total.toFixed(2));
 });
 
 </script>

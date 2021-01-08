@@ -1,10 +1,34 @@
 <?php 
 include "../templates/nav.php";
 include '../model/bd.php';
+
+$results_per_page = 10;
+
 $sql = "SELECT * FROM ingresos";
 $query = $conn->prepare($sql);
 $query->execute();
 $res = $query->fetchAll();
+
+$numbers_of_results = count($res);
+$number_of_pages = ceil($numbers_of_results/$results_per_page);
+
+if(!isset($_GET['page'])){
+    $page = 1;
+}else{
+    $page = $_GET['page'];
+}
+
+$this_page_first_result = ($page-1)*$results_per_page;
+
+//new query
+$sql = "SELECT * FROM ingresos LIMIT " . $this_page_first_result . ',' . $results_per_page;
+$query = $conn->prepare($sql);
+$query->execute();
+$res = $query->fetchAll();
+
+for($page=1;$page <= $number_of_pages;$page++){
+    echo '<a href="ingresoTable.php?page='. $page .'">' . $page . '</a> ';
+}
 ?>
 
 <div class="container mt-4">
@@ -68,7 +92,7 @@ $res = $query->fetchAll();
     </div>
     <div class="d-flex bg-secondary marginb">
     <div class="p-2 mr-auto text-white"><strong><p>Total:</p></strong></div>
-    <div class="p-2 mr-5 text-white"><strong><p><?php echo $suma ?></p></strong></div>
+    <div class="p-2 mr-5 text-white"><strong><p><?php echo number_format($suma) ?></p></strong></div>
     </div>
 </div>
 
