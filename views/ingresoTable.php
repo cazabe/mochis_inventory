@@ -26,12 +26,15 @@ $query = $conn->prepare($sql);
 $query->execute();
 $res = $query->fetchAll();
 
-for($page=1;$page <= $number_of_pages;$page++){
-    echo '<a href="ingresoTable.php?page='. $page .'">' . $page . '</a> ';
-}
 ?>
 
 <div class="container mt-4">
+    <p>Buscar en página:</p>
+<div class="pagination_mochis">
+<?php for($page=1;$page <= $number_of_pages;$page++) { ?>
+        <a href="ingresoTable.php?page='. $page .'"><?php echo $page ?></a>
+<?php } ?>
+</div>
 
     <div class="card">
         <div class="card-header">

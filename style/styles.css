@@ -12,3 +12,11 @@
  .marginb{
      margin-bottom: 80px;
  }
+
+ .pagination_mochis a{
+     font-size: 22px;
+ }
+
+ .pagination_mochis{
+    margin-bottom: 10px;
+ }

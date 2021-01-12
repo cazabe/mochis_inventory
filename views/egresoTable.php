@@ -2,7 +2,26 @@
 include "../templates/nav.php";
 include '../model/bd.php';
 
+$results_per_page = 10;
+
 $sql = "SELECT * FROM egresos";
+$query = $conn->prepare($sql);
+$query->execute();
+$res = $query->fetchAll();
+
+$numbers_of_results = count($res);
+$number_of_pages = ceil($numbers_of_results/$results_per_page);
+
+if(!isset($_GET['page'])){
+    $page = 1;
+}else{
+    $page = $_GET['page'];
+}
+
+$this_page_first_result = ($page-1)*$results_per_page;
+
+//new query
+$sql = "SELECT * FROM egresos LIMIT " . $this_page_first_result . ',' . $results_per_page;
 $query = $conn->prepare($sql);
 $query->execute();
 $res = $query->fetchAll();
@@ -10,7 +29,12 @@ $res = $query->fetchAll();
 
 
 <div class="container mt-4">
-
+        <p>Buscar en página:</p>    
+    <div class="pagination_mochis">
+        <?php for($page=1;$page <= $number_of_pages;$page++) { ?>
+                <a href="ingresoTable.php?page='. $page .'"><?php echo $page ?></a>
+        <?php } ?>
+    </div>
     <div class="card">
         <div class="card-header">
             <table class="width:100%">

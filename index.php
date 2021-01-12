@@ -65,7 +65,7 @@ $totalC = $totalI - $totale;
 
     <div class="card mt-4">
         <div class="card-header text-center">
-            <h1>Facturado</h1>
+            <h1>REPORTE GENERAL</h1>
         </div>
         <div class="card-body">
             <table class="table">
