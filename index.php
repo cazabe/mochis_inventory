@@ -2,6 +2,7 @@
 include './templates/nav.php';
 include './model/bd.php';
 
+
 $sql = "SELECT i.totalIngreso FROM ingresos i";
 $query = $conn->prepare($sql);
 $query->execute();
@@ -27,7 +28,14 @@ $totalC = $totalI - $totale;
 
 ?>
 
+<style>
+div.ex1 {
+  overflow: scroll;
+}
+</style>
+
 <div class="container">
+
 
     <div class="row mt-4">
         <div class="col-md-4">
@@ -56,7 +64,6 @@ $totalC = $totalI - $totale;
                     <h5 class="card-title text-center"><i class="fa fa-user"></i> TOTAL CONSOLIDADO</h5>
                 </div>
                 <div class="card-footer text-center">
-                    <!-- <a href="#" class="card-link">VER VER TABLA</a> -->
                     <strong><p>TOTAL: <?php echo $totalC ?></p></strong>
                 </div>
             </div>
@@ -66,27 +73,71 @@ $totalC = $totalI - $totale;
     <div class="card mt-4">
         <div class="card-header text-center">
             <h1>REPORTE GENERAL</h1>
+            <form method="POST" action="index.php">
+                <select name="filterMochis">
+                <option value="">...</option>
+                <option value="pichincha">pichincha</option>
+                <option value="produbanco">produbanco</option>
+                </select>
+                <input type="submit" name="submit" value="Filtrar">
+            </form>
         </div>
-        <div class="card-body">
+        <div class="card-body" style="margin-bottom: 100px;">
+          <div class="ex1">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>FECHA</th>
-                        <th>CLIENTE</th>
-                        <th>VALOR TOTAL</th>
-                        <th>ESTADO</th>
+                        <th>#</th>
+                        <th>Cliente</th>
+                        <th>Sector</th>
+                        <th>Banco</th>
+                        <th>Caja de mochi</th>
+                        <th>Cantidad</th>
+                        <th>Costo envio</th>
+                        <th>Venta</th>
+                        <th>Total ingreso</th>
+                        <th>Comentario</th>
+                        <th>Hora entrega</th>
+                        <th>Fecha</th>
                     </tr>
                 </thead>
-                <tbody>
-                <tr>
-                        <th>1</th>
-                        <th>12/20/2020</th>
-                        <th>Prueba</th>
-                        <th>140$</th>
-                        <th><span><span class="badge badge-warning">Pendiente</span></span></th>
-                    </tr>
+                
+                <tbody class="mb-4 pb-4">
+                <?php 
+    
+                if(isset($_POST['submit'])){
+                    
+                    $filterCheck = $_POST['filterMochis'];
+                    
+                    $sql = "SELECT * FROM ingresos WHERE banco = '$filterCheck'";
+                    $query = $conn->prepare($sql);
+                    $query->execute();
+                    $resfilter = $query->fetchAll();
+                    
+                    
+                    foreach ($resfilter as $filter) { ?>
+                     
+                        <tr>
+                            <td><?php echo $filter['idIngreso'] ?></td>
+                            <td><?php echo $filter['nombreIngreso'] ?></td>
+                            <td><?php echo $filter['sector'] ?></td>
+                            <td><?php echo $filter['banco'] ?></td>
+                            <td><?php echo $filter['cajaMochi'] ?></td>
+                            <td><?php echo $filter['cantidad'] ?></td>
+                            <td><?php echo $filter['envio'] ?></td>
+                            <td><?php echo $filter['venta'] ?></td>
+                            <td><?php echo $filter['totalIngreso'] ?></td>
+                            <td><?php echo $filter['comentario'] ?></td>
+                            <td><?php echo $filter['hora_entrega'] ?></td>
+                            <td><?php echo $filter['fecha'] ?></td>
+                        </tr>
+                    <?php
+                    }
+                }
+                ?>
+               
                 </tbody>
+              </div>
             </table>
         </div>
     </div>
