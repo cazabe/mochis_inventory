@@ -2,6 +2,11 @@
 $servername = "localhost:3310";
 $username = "root";
 $password = "";
+  
+//en server
+  // $servername='localhost';
+  // $username='mochis_admin2';
+  // $password='wfAF1hyGt0';
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=mochisinventory", $username, $password);
@@ -11,4 +16,5 @@ try {
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 }
+
 ?>

@@ -2,38 +2,43 @@
 include "../templates/nav.php";
 include '../model/bd.php';
 
-$results_per_page = 10;
+// $results_per_page = 15;
 
 $sql = "SELECT * FROM ingresos";
 $query = $conn->prepare($sql);
 $query->execute();
 $res = $query->fetchAll();
 
-$numbers_of_results = count($res);
-$number_of_pages = ceil($numbers_of_results/$results_per_page);
+// $numbers_of_results = count($res);
+// $number_of_pages = ceil($numbers_of_results/$results_per_page);
 
-if(!isset($_GET['page'])){
-    $page = 1;
-}else{
-    $page = $_GET['page'];
-}
+// if(!isset($_GET['page'])){
+//     $page = 1;
+// }else{
+//     $page = $_GET['page'];
+// }
 
-$this_page_first_result = ($page-1)*$results_per_page;
+// $this_page_first_result = ($page-1)*$results_per_page;
 
 //new query
-$sql = "SELECT * FROM ingresos LIMIT " . $this_page_first_result . ',' . $results_per_page;
-$query = $conn->prepare($sql);
-$query->execute();
-$res = $query->fetchAll();
+// $sql = "SELECT * FROM ingresos LIMIT " . $this_page_first_result . ',' . $results_per_page;
+// $query = $conn->prepare($sql);
+// $query->execute();
+// $resPagination = $query->fetchAll();
 
 ?>
 
-<div class="container mt-4">
+<style>
+div.ex1 {
+  overflow: scroll;
+  height: 700px;
+}
+</style>
+
+<!-- <div class="container mt-4">
     <p>Buscar en página:</p>
-<div class="pagination_mochis">
-<?php for($page=1;$page <= $number_of_pages;$page++) { ?>
-        <a href="ingresoTable.php?page='. $page .'"><?php echo $page ?></a>
-<?php } ?>
+<div class="pagination_mochis"> -->
+
 </div>
 
     <div class="card">
@@ -50,14 +55,26 @@ $res = $query->fetchAll();
             </table>
         </div>
         <div class="body">
+           <div class="ex1">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
                         <th>#</th>
                         <th>Cliente</th>
                         <th>Sector</th>
-                        <th>Banco</th>
+                        <th>Forma de pago</th>
                         <th>Caja de mochi</th>
+                        <th>Love Potion</th>
+                        <th>Polar</th>
+                        <th>Chocolate</th>
+                        <th>Sunshine</th>
+                        <th>Kissme</th>
+                        <th>Beachy</th>
+                        <th>Konnichiwa</th>
+                        <th>Caramel Coffee</th>
+                        <th>Cookie monster</th>
+                        <th>Sabor de temporada</th>
+                        <th>Adicional</th>
                         <th>Cantidad</th>
                         <th>Costo envio</th>
                         <th>Venta</th>
@@ -78,6 +95,17 @@ $res = $query->fetchAll();
                             <td><?php echo $ingreso['sector'] ?></td>
                             <td><?php echo $ingreso['banco'] ?></td>
                             <td><?php echo $ingreso['cajaMochi'] ?></td>
+                            <td><?php echo $ingreso['lp'] ?></td>
+                            <td><?php echo $ingreso['po'] ?></td>
+                            <td><?php echo $ingreso['cho'] ?></td>
+                            <td><?php echo $ingreso['sun'] ?></td>
+                            <td><?php echo $ingreso['ki'] ?></td>
+                            <td><?php echo $ingreso['be'] ?></td>
+                            <td><?php echo $ingreso['ko'] ?></td>
+                            <td><?php echo $ingreso['cc'] ?></td>
+                            <td><?php echo $ingreso['cm'] ?></td>
+                            <td><?php echo $ingreso['temp'] ?></td>
+                            <td><?php echo $ingreso['adicional'] ?></td>
                             <td><?php echo $ingreso['cantidad'] ?></td>
                             <td><?php echo $ingreso['envio'] ?></td>
                             <td><?php echo $ingreso['venta'] ?></td>
@@ -90,6 +118,7 @@ $res = $query->fetchAll();
                     }
                     ?>
                 </tbody>
+                </div>
             </table>
         </div>
     </div>

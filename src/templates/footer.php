@@ -1,5 +1,5 @@
     
-    <div class="footer">
+    <div class="footer-mochis">
         <p>&copy Propiedad de Mochis-ec</p>
     </div>
 

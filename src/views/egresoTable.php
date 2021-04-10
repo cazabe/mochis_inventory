@@ -2,38 +2,44 @@
 include "../templates/nav.php";
 include '../model/bd.php';
 
-$results_per_page = 10;
+// $results_per_page = 10;
 
 $sql = "SELECT * FROM egresos";
 $query = $conn->prepare($sql);
 $query->execute();
 $res = $query->fetchAll();
 
-$numbers_of_results = count($res);
-$number_of_pages = ceil($numbers_of_results/$results_per_page);
+// $numbers_of_results = count($res);
+// $number_of_pages = ceil($numbers_of_results/$results_per_page);
 
-if(!isset($_GET['page'])){
-    $page = 1;
-}else{
-    $page = $_GET['page'];
-}
+// if(!isset($_GET['page'])){
+//     $page = 1;
+// }else{
+//     $page = $_GET['page'];
+// }
 
-$this_page_first_result = ($page-1)*$results_per_page;
+// $this_page_first_result = ($page-1)*$results_per_page;
 
-//new query
-$sql = "SELECT * FROM egresos LIMIT " . $this_page_first_result . ',' . $results_per_page;
-$query = $conn->prepare($sql);
-$query->execute();
-$res = $query->fetchAll();
+// //new query
+// $sql = "SELECT * FROM egresos LIMIT " . $this_page_first_result . ',' . $results_per_page;
+// $query = $conn->prepare($sql);
+// $query->execute();
+// $res = $query->fetchAll();
 ?>
 
+<style>
+div.ex1 {
+  overflow: scroll;
+  height: 700px;
+}
+</style>
 
 <div class="container mt-4">
         <p>Buscar en página:</p>    
     <div class="pagination_mochis">
-        <?php for($page=1;$page <= $number_of_pages;$page++) { ?>
-                <a href="ingresoTable.php?page='. $page .'"><?php echo $page ?></a>
-        <?php } ?>
+        <?php //for($page=1;$page <= $number_of_pages;$page++) { ?>
+                <!-- <a href="ingresoTable.php?page='. $page .'"><?php //echo $page ?></a> -->
+        <?php //} ?>
     </div>
     <div class="card">
         <div class="card-header">
@@ -49,12 +55,13 @@ $res = $query->fetchAll();
             </table>
         </div>
         <div class="body">
+           <div class="ex1">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
                         <th>#</th>
                         <th>Nombre egreso</th>
-                        <th>Banco</th>
+                        <th>Forma de pago</th>
                         <th>Cantidad producto/servicio</th>
                         <th>costo</th>
                         <th>Total egreso</th>
@@ -79,6 +86,7 @@ $res = $query->fetchAll();
                     }
                     ?>
                 </tbody>
+                </div>
             </table>
         </div>
     </div>

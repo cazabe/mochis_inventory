@@ -13,7 +13,7 @@ $query->execute();
 
 if($query){
     echo "Egreso guardado";
-    echo "<script>alert('Egreso registrado correctamente'); location.href='../index.php'</script>";
+    echo "<script>alert('Egreso registrado correctamente'); location.href='../views/egresoForm.php'</script>";
 }else{
     echo "Error al guardar egreso";
 }

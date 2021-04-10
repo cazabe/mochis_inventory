@@ -1,4 +1,4 @@
-.footer {
+.footer-mochis {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -20,3 +20,7 @@
  .pagination_mochis{
     margin-bottom: 10px;
  }
+
+ div.ex1 {
+    overflow: scroll;
+  }

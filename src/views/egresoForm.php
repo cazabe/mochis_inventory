@@ -16,12 +16,13 @@ include "../templates/nav.php"
   </div>
 
   <div class="form-group row mt-4">
-    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Banco:</label>
+    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Forma de pago:</label>
     <div class="col-sm-10">
     <select class="form-control" id="banco" name="banco">
       <option>Escoja...</option>
       <option value="pichincha">Pichincha</option>
       <option value="produbanco">Produbanco</option>
+      <option value="efectivo">Efectivo</option>
     </select>
     </div>
   </div>
